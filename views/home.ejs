@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- ✅ Important for mobile -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Welcome to Our Online Academy</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
       background: linear-gradient(to right, #F5C45E, #F5C45E);
@@ -13,7 +13,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 1rem;
     }
 
     .card {
@@ -22,19 +22,34 @@
       padding: 2rem;
       border-radius: 1rem;
       width: 100%;
-      max-width: 600px;
+      max-width: 720px;
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
     }
 
     .card h1 {
       font-weight: bold;
+      font-size: 2rem;
       margin-bottom: 1rem;
+    }
+
+    .card p {
+      font-size: 1.1rem;
     }
 
     .list-group-item {
       background-color: transparent;
       border: none;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      padding: 0.75rem 0.5rem;
+    }
+
+    .list-group-item span:first-child {
+      flex: 1;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #28a745;
     }
 
     .btn-register {
@@ -49,39 +64,35 @@
   </style>
 </head>
 <body>
-
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8">
         <div class="card text-center">
           <h1>Welcome to Tiimtech Solutions Online Academy</h1>
-          <p class="mb-4 fw-semibold fs-5">
-            We offer high-quality training in Web Design & Development, Graphic Design, and Microsoft Office—
+          <p class="mb-4 fw-semibold">
+            We offer high-quality training in Web Design & Development, Graphic Design, and Microsoft Office —
             <span class="text-primary">now enhanced with AI to help you code smarter and faster!</span>
           </p>
-          
 
           <ul class="list-group list-group-flush mb-4 text-start">
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <span>🌐 Web Design & Development</span>
-              <span class="fw-bold text-success">GHC 300.00</span>
+              <span class="price">GHC 300.00</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <span>🎨 Graphic Design</span>
-              <span class="fw-bold text-success">GHC 150.00</span>
+              <span class="price">GHC 150.00</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <span>🖥 Microsoft Office Suite</span>
-              <span class="fw-bold text-success">GHC 100.00</span>
+              <span class="price">GHC 100.00</span>
             </li>
           </ul>
-          
 
           <a href="/register" class="btn btn-register btn-lg w-100">Register Now</a>
         </div>
       </div>
     </div>
   </div>
-
 </body>
 </html>
