@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- ✅ Important for mobile -->
   <title>Welcome to Our Online Academy</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -20,8 +21,8 @@
       color: #333;
       padding: 2rem;
       border-radius: 1rem;
-      max-width: 600px;
       width: 100%;
+      max-width: 600px;
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
     }
 
@@ -49,17 +50,37 @@
 </head>
 <body>
 
-  <div class="card text-center">
-    <h1>Welcome to Our Online Academy</h1>
-    <p class="mb-4">We offer high-quality training in the following courses:</p>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="card text-center">
+          <h1>Welcome to Our Tiimtech Solutions Online Academy</h1>
+          <p class="mb-4 fw-semibold fs-5">
+            We offer high-quality training in Web Design, Graphic Design, and Microsoft Office—
+            <span class="text-primary">now enhanced with AI to help you code smarter and faster!</span>
+          </p>
+          
 
-    <ul class="list-group mb-4">
-      <li class="list-group-item">🌐 Web Design</li>
-      <li class="list-group-item">🎨 Graphic Design</li>
-      <li class="list-group-item">🖥 Microsoft Office Suite</li>
-    </ul>
+          <ul class="list-group list-group-flush mb-4 text-start">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span>🌐 Web Design & Development</span>
+              <span class="fw-bold text-success">GHC 300.00</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span>🎨 Graphic Design</span>
+              <span class="fw-bold text-success">GHC 150.00</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span>🖥 Microsoft Office Suite</span>
+              <span class="fw-bold text-success">GHC 100.00</span>
+            </li>
+          </ul>
+          
 
-    <a href="/register" class="btn btn-register btn-lg">Register Now</a>
+          <a href="/register" class="btn btn-register btn-lg w-100">Register Now</a>
+        </div>
+      </div>
+    </div>
   </div>
 
 </body>
