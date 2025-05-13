@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      background: linear-gradient(to right, #F5C45E, #F5C45E);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 2rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .form-container h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .btn-primary {
+      background-color: #BE3D2A;
+      border: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #1e5edc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Register for a Course</h1>
+
+    <form action="/register" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" class="form-control" id="phone" name="phone"
+       required pattern="^(?:\+233|233|0)[235][0-9]{8}$"
+       title="Enter a valid Ghanaian phone number (e.g. 0244123456, +233244123456)">
+
+      </div>
+
+      <div class="form-group">
+        <label for="course">Select Course</label>
+        <select class="form-control" id="course" name="course" required>
+          <% courses.forEach(course => { %>
+            <option value="<%= course %>"><%= course %></option>
+          <% }); %>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block mt-3">Register</button>
+    </form>
+  </div>
+
+<script>
+  document.querySelector("form").addEventListener("submit", function (e) {
+    const phone = document.getElementById("phone").value.trim();
+    const ghanaPhonePattern = /^(?:\+233|233|0)[235][0-9]{8}$/;
+
+    if (!ghanaPhonePattern.test(phone)) {
+      alert("Enter a valid Ghanaian phone number (e.g. 0244123456 or +233244123456)");
+      e.preventDefault(); // stop form submission
+    }
+  });
+</script>
+
+
+</body>
+</html>

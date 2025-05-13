@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Students</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f1f3f5;
+      padding-top: 50px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #333;
+    }
+    .logout-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background-color: #dc3545;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .logout-btn:hover {
+      background-color: #c82333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table th, table td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 2px solid #dee2e6;
+    }
+    table th {
+      background-color: #007bff;
+      color: white;
+      font-size: 1.1rem;
+    }
+    table td {
+      background-color: #f8f9fa;
+      font-size: 1rem;
+    }
+    table tr:nth-child(even) td {
+      background-color: #e9ecef;
+    }
+    table tr:hover {
+      background-color: #f1f3f5;
+    }
+    .alert {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Registered Students</h2>
+
+  
+    <a href="/admin/logout" class="logout-btn">Logout</a>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% students.forEach((s, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td> <!-- Display the student number -->
+            <td><%= s.name %></td>
+            <td><%= s.course %></td>
+            <td><%= s.phone %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
